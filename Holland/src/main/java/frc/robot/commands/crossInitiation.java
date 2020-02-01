@@ -45,7 +45,7 @@ public class crossInitiation extends TimedCommand {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.drivetrain.driveRobot(0.3,0.3);
+        Robot.drivetrain.driveRobot(0.3,-0.3);
     }
 
 

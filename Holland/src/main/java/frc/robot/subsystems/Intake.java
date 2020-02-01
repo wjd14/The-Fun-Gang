@@ -78,7 +78,10 @@ foldOut = new WPI_VictorSPX(6);
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 public void spinWheel(double wheelSpeed){
-wheelspin.set(wheelSpeed)
+wheelspin.set(wheelSpeed);
+}
+public void moveIntake(double Speed){
+    foldOut.set(Speed);
 }
 }
 

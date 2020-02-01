@@ -11,7 +11,9 @@
 
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.*;
 import frc.robot.Robot;
+import frc.robot.Robot.*;
 
 /**
  *
@@ -43,10 +45,10 @@ public class RunIntake extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        if(Robot.oi.getRightJoystick.getRawButton(1)==true){
+        if(Robot.oi.getRightJoystick().getRawButton(1) == true){
             Robot.intake.spinWheel(0.5);
         }
-        else if(Robot.oi.getRightJoystick.getRawButton(2)==true){ 
+        else if(Robot.oi.getRightJoystick().getRawButton(2)==true){ 
             
             Robot.intake.spinWheel(-0.5);
         }

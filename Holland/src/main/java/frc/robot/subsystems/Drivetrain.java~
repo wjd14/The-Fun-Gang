@@ -118,7 +118,7 @@ differentialDrive.setMaxOutput(1.0);
         
     }
     
-public void driveArcadeStyle(Yaxis, Xaxis){
+public void driveArcadeStyle(double Yaxis,double Xaxis){
     differentialDrive.arcadeDrive(Yaxis, Xaxis, true);
 }
 }
