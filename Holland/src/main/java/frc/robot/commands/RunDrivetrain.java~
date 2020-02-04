@@ -44,7 +44,7 @@ public class RunDrivetrain extends Command {
     @Override
     protected void execute() {
      //   Robot.drivetrain.driveRobot(Robot.oi.GetYAxisValue() * -0.5, Robot.oi.GetYAxisValue() * 0.5);
-     Robot.drivetrain.driveArcadeStyle(Robot.oi.GetYAxisValue()*0.5, Robot.oi.GetXAxisValue()*0.5);
+     Robot.drivetrain.driveArcadeStyle(Robot.oi.GetYAxisValue()*-0.5, Robot.oi.GetXAxisValue()*0.5);
     }
 
     // Make this return true when this Command no longer needs to run execute()
