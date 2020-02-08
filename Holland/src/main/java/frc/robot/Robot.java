@@ -71,6 +71,7 @@ intake = new Intake();
     chooser.setDefaultOption("Cross Initiation", new crossInitiation(0.5));
     chooser.addOption("Do Nothing", new doNothing(15));
     chooser.addOption("Move Around", new autoMoveAround());
+    chooser.addOption("Cross Initiation Back", new crossInitiationBack(1));
     
     SmartDashboard.putData("Auto mode", chooser);
 
