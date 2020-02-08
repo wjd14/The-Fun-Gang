@@ -85,7 +85,7 @@ leftjoystick = new Joystick(0);
         SmartDashboard.putData("Turning", new Turning());
         SmartDashboard.putData("Turnleft", new Turnleft());
         SmartDashboard.putData("Turnright", new Turnright());
-        SmartDashboard.putData("autoMoveAround", new autoMoveAround());
+        SmartDashboard.putData("autoMoveAround", new autoMoveAround()); 
         SmartDashboard.putData("crossAndGoBack", new crossAndGoBack());
         SmartDashboard.putData("goBackwards", new goBackwards());
         SmartDashboard.putData("crossInitiationBack", new crossInitiationBack());
