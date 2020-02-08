@@ -439,8 +439,6 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-<<<<<<< HEAD
-=======
         default: []
         name: Parameter presets
         validators: null
@@ -459,7 +457,7 @@ Children:
         name: Parameters
         validators: null
         value:
-        - *id012
+        - *id010
       Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Run When Disabled, validators: null, value: false}
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -547,12 +545,10 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Timed Command
     Name: goBackwards
-    Name: autoMoveAround
->>>>>>> teeganandjunior
-        default: &id012 []
+        default: &id010 []
         name: Parameter presets
         validators: null
-        value: *id012
+        value: *id010
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Timed Command
