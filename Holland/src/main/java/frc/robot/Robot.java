@@ -71,7 +71,7 @@ intake = new Intake();
     chooser.setDefaultOption("Cross Initiation", new crossInitiation(2));
     chooser.addOption("Do Nothing", new doNothing(15));
     chooser.addOption("Go Backwards", new goBackwards(6));
-    chooser.addOption("Cross & Go Back", new crossAndGoBack());
+    chooser.addOption("Cross & Go Back", new crossAndGoBack()); 
     chooser.addOption("From Left To Enemy Loading Zone", new toEnemyLoadingZoneFromLeft());
     chooser.addOption("From Right To Target Zone", new toTargetZoneFromRight());
     chooser.addOption("From Right To Trench & Pick Up Balls", new goToOurTrenchFromRight());
