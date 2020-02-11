@@ -11,6 +11,8 @@
 
 package frc.robot.subsystems;
 
+bad code breaks program
+
 
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
