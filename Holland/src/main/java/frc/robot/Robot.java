@@ -81,7 +81,10 @@ intake = new Intake();
     chooser.addOption("From Left Go To Rendevous Point", new goToRendevousFromLeft());
     chooser.addOption("From Right Release Balls & Go To Trench & Pick Up Balls", new releaseBallsAndGoToTrenchAndPickUp());
     chooser.addOption("From Left Sideways Release Balls & Go To Trench & Pick Up Balls", new releaseBallsAndGoToTrenchAndPickUpBallsFromRight());
-    
+    chooser.addOption("Go To The Bottom Left Corner", new gotobottomleftcorner());
+    chooser.addOption("Cross Initiation And Go To Bottom Left Corner", new crossinitiationandgotothebottomleftcorner());
+    chooser.addOption("Cross Initiation And Go To Bottom  Right Corner", new crossinitiationandgotobottomrightcornor());
+    chooser.addOption("Go Throught Rendeous Point To Enemy Trench", new gothroughrendezvouspointtoenemytrench());
     SmartDashboard.putData("Auto mode", chooser);
 
 
