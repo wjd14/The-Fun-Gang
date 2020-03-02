@@ -35,7 +35,6 @@ public class goToOurTrenchFromRight extends CommandGroup {
     addSequential(new crossInitiation(1));
     addSequential(new Turnright(0.5));
     addParallel(new crossInitiation(0.4));
-    addSequential(new FoldOutIntake(1));
     addSequential(new pickUpBalls(4));
   }
 }

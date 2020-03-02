@@ -79,12 +79,10 @@ wheelspin.set(wheelSpeed);
 
 
 public void moveLowerIntake(double lowerSpeed){
-
+lowerintakerunner.set(lowerSpeed);
 }
-
-
 public void moveUpperIntake(double upperSpeed){
-
+upperintakerunner.set(upperSpeed);
 }
 
 
