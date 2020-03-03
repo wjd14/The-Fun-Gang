@@ -43,7 +43,7 @@ public class RunDrivetrain extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-     //   Robot.drivetrain.driveRobot(Robot.oi.GetYAxisValue() * -0.5, Robot.oi.GetYAxisValue() * 0.5);
+     
      Robot.drivetrain.driveArcadeStyle(Robot.oi.GetYAxisValue()*-1, Robot.oi.GetXAxisValue()*1);
     }
 
