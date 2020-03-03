@@ -67,9 +67,9 @@ public Joystick rightJoystick;
 rightJoystick = new Joystick(1);
 
 foldInButton = new JoystickButton(rightJoystick, 4);
-foldInButton.whenPressed(new FoldInIntake(0));
+
 foldOutButton = new JoystickButton(rightJoystick, 3);
-foldOutButton.whenPressed(new FoldOutIntake(0));
+
 leftjoystick = new Joystick(0);
 
 
@@ -80,8 +80,6 @@ leftjoystick = new Joystick(0);
         SmartDashboard.putData("RunIntake", new RunIntake());
         SmartDashboard.putData("crossInitiation", new crossInitiation());
         SmartDashboard.putData("doNothing", new doNothing());
-        SmartDashboard.putData("FoldInIntake", new FoldInIntake());
-        SmartDashboard.putData("FoldOutIntake", new FoldOutIntake());
         SmartDashboard.putData("Turnleft", new Turnleft(0.5));
         SmartDashboard.putData("Turnright", new Turnright(0.5));
         SmartDashboard.putData("autoMoveAround", new autoMoveAround()); 

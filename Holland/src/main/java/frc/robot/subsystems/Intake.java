@@ -43,8 +43,7 @@ private WPI_VictorSPX foldOut;
 wheelspin = new WPI_VictorSPX(5);
 
 
-        
-foldOut = new WPI_VictorSPX(6);
+
 
 
         
@@ -80,8 +79,6 @@ foldOut = new WPI_VictorSPX(6);
 public void spinWheel(double wheelSpeed){
 wheelspin.set(wheelSpeed);
 }
-public void moveIntake(double Speed){
-    foldOut.set(Speed);
-}
+
 }
 

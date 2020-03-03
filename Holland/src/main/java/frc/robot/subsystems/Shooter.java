@@ -23,8 +23,8 @@ public class Shooter extends Subsystem {
 
   public Shooter(){
 
-    Left = new WPI_VictorSPX(7)
-    Right = new WPI_VictorSPX(6)
+    Left = new WPI_VictorSPX(7);
+    Right = new WPI_VictorSPX(6);
 
 
   }
@@ -39,8 +39,8 @@ public class Shooter extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-
+  
   public void spinLeft(double wheelSpeed){
-    Left.set(0.7)
+    Left.set(0.7);
   }
 }
