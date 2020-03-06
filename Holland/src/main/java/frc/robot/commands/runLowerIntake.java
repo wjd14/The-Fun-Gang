@@ -13,10 +13,11 @@ import frc.robot.Robot;
 public class runLowerIntake extends Command {
   double m_speed = 0;
   public runLowerIntake(double speed) {
-    requires(Robot.intake);
+    requires(Robot.lowerintake);
     m_speed = speed;
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    
+    //negative speeds run this in, positive speeds run it out
+
   }
 
   // Called just before this Command runs the first time
@@ -28,7 +29,7 @@ public class runLowerIntake extends Command {
   @Override
   protected void execute() {
     
-      Robot.intake.moveLowerIntake(m_speed);
+      Robot.lowerintake.moveLowerIntake(m_speed);
     
   }
 
@@ -41,11 +42,13 @@ public class runLowerIntake extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.lowerintake.moveLowerIntake(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }

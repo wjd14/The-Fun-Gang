@@ -19,7 +19,6 @@ import edu.wpi.first.wpilibj.buttons.*;
 import edu.wpi.first.wpilibj.*;
 import frc.robot.subsystems.*;
 import frc.robot.commands.*;
-import frc.robot.commands.runLowerIntake;
 
 
 
@@ -70,16 +69,59 @@ public JoystickButton moveLowerIntakeButton;
         rightJoystick = new Joystick(1);
         leftJoystick = new Joystick(0);
         
-        Button button1 = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 4);
-        Button button2 = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 5);
-        button1.whenPressed(new runLowerIntake(0.5));
-        button2.whenPressed(new runUpperIntake(0.5));
+        Button Trigger = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 1);
+        Button button2 = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 2);
+        Button button3 = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 3);
+        Button button6 = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 6);
+        Button button7 = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 7);
+        Button button11 = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 11);
+        Button button10 = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 10);
+        Button button4 = new edu.wpi.first.wpilibj.buttons.JoystickButton(rightJoystick, 4);
+      
+        //spin up the shooter to speed, before feeding balls in
+        button4.whileHeld(new StartShooter());
+
+        
+        //pulling the trigger will feed balls into an already spinning shooter, using lowerintake
+        // upperintake and indexer
+        Trigger.whileHeld(new runLowerIntake(-0.3));
+        Trigger.whileHeld(new runUpperIntake(-0.4));
+        Trigger.whileHeld(new IndexBall());
+
+
+        //run the intake and the feeders inwards to raise balls into the robot
+        button2.whileHeld(new runUpperIntake(-0.4));
+        button2.whileHeld(new runLowerIntake(-0.3));
+        button2.whileHeld(new RunIntake(-0.2));
+
+
+        //run the  intake and the feeders outwards to lower balls out of the robot
+        button3.whileHeld(new runUpperIntake(0.4));
+        button3.whileHeld(new runLowerIntake(0.3));
+        button3.whileHeld(new RunIntake(0.2));
+
+        //just run the lowerintake and intake out to spit out balls
+        button6.whileHeld(new runLowerIntake(0.5));
+        button6.whileHeld(new RunIntake(0.5));
+
+
+        //just run the lowerintake and intake in to move balls closer to upperintake
+        button7.whileHeld(new runLowerIntake(-0.5));
+        button7.whileHeld(new RunIntake(-0.5));
+
+
+        //just run the upper intake out to move balls towards lowerintake
+        button11.whileHeld(new runUpperIntake(0.5));
+
+
+        //just run the upper intake in to move balls towards indexer and shooter
+        button10.whileHeld(new runUpperIntake(-0.5));
         
         
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("RunDrivetrain", new RunDrivetrain());
-        SmartDashboard.putData("RunIntake", new RunIntake());
+        SmartDashboard.putData("RunIntake", new RunIntake(0.5));
         SmartDashboard.putData("crossInitiation", new crossInitiation());
         SmartDashboard.putData("doNothing", new doNothing());
         SmartDashboard.putData("Turnleft", new Turnleft(0.5));
@@ -144,7 +186,7 @@ public Joystick getRightJoystick() {
         return Math.signum(Yaxis)*Math.pow(Yaxis,2);
         }
       public double GetXAxisValue(){
-          double Xaxis=leftJoystick.getRawAxis(0);
+          double Xaxis=leftJoystick.getRawAxis(5);
           return Math.signum(Xaxis)*Math.pow(Xaxis,2);
     
       }

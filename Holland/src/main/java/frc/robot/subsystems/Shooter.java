@@ -19,15 +19,15 @@ public class Shooter extends Subsystem {
 
   private WPI_TalonSRX Left;
   private WPI_TalonSRX Right;
-  private WPI_VictorSPX Indexer;
+  
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
   public Shooter(){
 
-    Left = new WPI_TalonSRX(9);
-    Right = new WPI_TalonSRX(10);
-    Indexer = new WPI_VictorSPX(8);
+    Left = new WPI_TalonSRX(10);
+    Right = new WPI_TalonSRX(9);
+
 
   }
 
@@ -35,7 +35,7 @@ public class Shooter extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new ShootTeleOp());
+    setDefaultCommand(new shooterDoNothing());
   }
 
   
@@ -45,7 +45,5 @@ public class Shooter extends Subsystem {
   public void spinRight(double wheelSpeed){
     Right.set(wheelSpeed);
   }
-  public void spinIndexer(double wheelSpeed){
-    Indexer.set(wheelSpeed);
-  }
+  
 }
