@@ -31,7 +31,7 @@ public class timedRunIndexer extends TimedCommand {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.indexer.spinIndexer(0.7);
+    Robot.indexer.spinIndexer(0.5);
   }
 
   // Called once after timeout

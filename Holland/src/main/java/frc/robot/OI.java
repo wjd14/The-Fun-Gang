@@ -84,25 +84,26 @@ public JoystickButton moveLowerIntakeButton;
         
         //pulling the trigger will feed balls into an already spinning shooter, using lowerintake
         // upperintake and indexer
-        Trigger.whileHeld(new runLowerIntake(-0.3));
+        Trigger.whileHeld(new runLowerIntake(-0.4));
         Trigger.whileHeld(new runUpperIntake(-0.4));
-        Trigger.whileHeld(new IndexBall());
+        Trigger.whileHeld(new RunIndexer(0.4));
 
 
         //run the intake and the feeders inwards to raise balls into the robot
         button2.whileHeld(new runUpperIntake(-0.4));
-        button2.whileHeld(new runLowerIntake(-0.3));
+        button2.whileHeld(new runLowerIntake(-0.4));
         button2.whileHeld(new RunIntake(-0.2));
 
 
         //run the  intake and the feeders outwards to lower balls out of the robot
         button3.whileHeld(new runUpperIntake(0.4));
-        button3.whileHeld(new runLowerIntake(0.3));
+        button3.whileHeld(new runLowerIntake(0.4));
         button3.whileHeld(new RunIntake(0.2));
+        button3.whileHeld(new RunIndexer(-0.4));
 
         //just run the lowerintake and intake out to spit out balls
         button6.whileHeld(new runLowerIntake(0.5));
-        button6.whileHeld(new RunIntake(0.5));
+        button6.whileHeld(new RunIntake(1));
 
 
         //just run the lowerintake and intake in to move balls closer to upperintake
@@ -128,7 +129,7 @@ public JoystickButton moveLowerIntakeButton;
         SmartDashboard.putData("Turnright", new Turnright(0.5));
         SmartDashboard.putData("autoMoveAround", new autoMoveAround()); 
         SmartDashboard.putData("crossAndGoBack", new crossAndGoBack());
-        SmartDashboard.putData("goBackwards", new goBackwards());
+        SmartDashboard.putData("goBackwards", new goBackwards(1));
         SmartDashboard.putData("toEnemyLoadingZoneFromLeft", new toEnemyLoadingZoneFromLeft());
         SmartDashboard.putData("toTargetZoneFromRight", new toTargetZoneFromRight());
         SmartDashboard.putData("goToOurTrenchFromRight", new goToOurTrenchFromRight());

@@ -30,13 +30,13 @@ public class driveNShootAuto extends CommandGroup {
     // e.g. if Command1 requires chassis, and Command2 requires arm,
     // a CommandGroup containing them would require both the chassis and the
     // arm.
-    /*
+    
     addSequential(new driveNStartShooter());
-    addParallel(new timedRunLeft(3));
-    addSequential(new timedRunRight(3));
-    addSequential(new timedRunIndexer(3));
-    addSequential(new timedStartShooter(3));
-*/
+    addParallel(new timedRunIndexer(5));
+    addParallel(new TimesLowerIntake(5));
+    addParallel(new TimesUpperIntake(5));
+    addParallel(new timedStartShooter(5));
+
 
 
   }

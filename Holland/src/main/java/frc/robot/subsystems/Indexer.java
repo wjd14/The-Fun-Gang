@@ -33,4 +33,5 @@ public class Indexer extends Subsystem {
   public void spinIndexer(double wheelSpeed){
     Indexer.set(wheelSpeed);
   }
+  
 }

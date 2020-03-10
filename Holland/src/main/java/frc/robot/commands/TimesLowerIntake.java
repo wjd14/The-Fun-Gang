@@ -7,18 +7,26 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
+import frc.robot.subsystems.LowerIntake;
 
-public class RunIndexer extends Command {
-  double s_speed = 0;
-  public RunIndexer(double speed){
-    requires(Robot.indexer);
-    s_speed = speed; 
-  }
-  public RunIndexer() {
+/**
+ * Add your docs here.
+ */
+public class TimesLowerIntake extends TimedCommand {
+  /**
+   * Add your docs here.
+   */
+  public TimesLowerIntake(double timeout) {
+    super(timeout);
     // Use requires() here to declare subsystem dependencies
-      
+    // eg. requires(chassis);
+
+  }@Override
+  protected synchronized void requires(Subsystem subsystem) {
+    
   }
 
   // Called just before this Command runs the first time
@@ -29,27 +37,18 @@ public class RunIndexer extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.indexer.spinIndexer(s_speed);
-
+    Robot.lowerintake.moveLowerIntake(-0.5);
   }
 
-  // Make this return true when this Command no longer needs to run execute()
-  @Override
-  protected boolean isFinished() {
-    return false;
-  }
-
-  // Called once after isFinished returns true
+  // Called once after timeout
   @Override
   protected void end() {
-    
-    Robot.indexer.spinIndexer(0);
+    Robot.lowerintake.moveLowerIntake(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
   }
 }

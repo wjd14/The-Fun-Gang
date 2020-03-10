@@ -9,11 +9,11 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class driveNStartShooter extends CommandGroup {
+public class shootNDriveBackwards extends CommandGroup {
   /**
    * Add your docs here.
    */
-  public driveNStartShooter() {
+  public shootNDriveBackwards() {
     // Add Commands here:
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());
@@ -30,7 +30,9 @@ public class driveNStartShooter extends CommandGroup {
     // e.g. if Command1 requires chassis, and Command2 requires arm,
     // a CommandGroup containing them would require both the chassis and the
     // arm.
-    addParallel(new crossInitiation(1.25));
-    addSequential(new timedStartShooter(1.25));
+    addSequential(new shootNDontMove());
+    addSequential(new goBackwards(1));
+    
+
   }
 }

@@ -31,8 +31,8 @@ public class timedStartShooter extends TimedCommand {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.shooter.spinLeft(-0.7);
-    Robot.shooter.spinRight(0.7);
+    Robot.shooter.spinLeft(-1);
+    Robot.shooter.spinRight(1);
   }
 
   // Called once after timeout
@@ -40,6 +40,7 @@ public class timedStartShooter extends TimedCommand {
   protected void end() {
     Robot.shooter.spinRight(0);
     Robot.shooter.spinLeft(0);
+  
   }
 
   // Called when another command which requires one or more of the same
